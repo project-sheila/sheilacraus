@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Experiences() {
+export default function Contact() {
   return (
     <main>
-        <h1>Experiences</h1>
+        <h1>Contact</h1>
     </main>
   )
 }
