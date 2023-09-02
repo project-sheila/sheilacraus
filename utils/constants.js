@@ -19,14 +19,18 @@ export const skills = [
             "Javascript",
             "HTML",
             "CSS"
-        ]
+        ],
+        main: true,
+        icon: require("../assets/images/web_dev.png")
     },
     {
         name: "Mobile development",
         tech_stack: [
             "React Native", 
             "Expo"
-        ]
+        ],
+        main: true,
+        icon: require("../assets/images/mobile_dev.png")
     },
     {
         name: "Tools",
@@ -37,7 +41,8 @@ export const skills = [
             "Sentry", 
             "Figma", 
             "Canva"
-        ]
+        ],
+        main: false
     },
     {
         name: "Soft",
@@ -48,13 +53,15 @@ export const skills = [
             "Organized", 
             "Time management", 
             "Team work"
-        ]
+        ],
+        main: false
     },
     {
         name: "Others",
         tech_stack: [
             "YOLOv8 Object Detection Algorithm"
-        ]
+        ],
+        main: false
     },
 ]
 
@@ -96,7 +103,7 @@ export const education = [
             "Bachelor of Science in Computer Science, Magna Cum Laude, GWA: 1.32",
             "Undergraduate thesis: Face mask compliance detection using the YOLOv8"
         ],
-        certificate_link: null
+        certificate_link: "https://www.upcebu.edu.ph/"
     },
     {
         id: 2,
