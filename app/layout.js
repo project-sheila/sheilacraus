@@ -2,9 +2,10 @@
 
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Button, Card, CardBody, Container, Text } from '@chakra-ui/react';
+import { Button, Card, CardBody, Container } from '@chakra-ui/react';
 import Link from 'next/link';
 import { Providers } from "./providers";
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,6 +15,8 @@ const inter = Inter({ subsets: ['latin'] })
 // }
 
 export default function RootLayout({ children }) {
+  const [activeTab, setActiveTab] = useState("home");
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -24,16 +27,16 @@ export default function RootLayout({ children }) {
               <Card className='shadow-lg rounded-lg mt-10'>
                 <CardBody className='p-3'>
                   <Link href="/">
-                    <Button><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
+                    <Button variant={activeTab === "home" ? "solid" : "default"} onClick={()=>setActiveTab("home")}><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
                   </Link>
                   <Link href="/experiences">
-                    <Button><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
+                    <Button variant={activeTab === "experiences" ? "solid" : "ghost"} onClick={()=>setActiveTab("experiences")}><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
                   </Link>
                   <Link href="/projects">
-                    <Button><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
+                    <Button variant={activeTab === "projects" ? "solid" : "ghost"} onClick={()=>setActiveTab("projects")}><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
                   </Link>
                   <Link href="/contact">
-                    <Button><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
+                    <Button variant={activeTab === "contact" ? "solid" : "ghost"} onClick={()=>setActiveTab("contact")}><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
                   </Link>
                   
                 </CardBody>
