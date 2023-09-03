@@ -27,16 +27,16 @@ export default function RootLayout({ children }) {
               <Card className='shadow-lg rounded-lg mt-10'>
                 <CardBody className='p-3'>
                   <Link href="/">
-                    <Button variant={activeTab === "home" ? "solid" : "default"} onClick={()=>setActiveTab("home")}><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
+                    <Button isActive={activeTab === "home"} onClick={()=>setActiveTab("home")}><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
                   </Link>
                   <Link href="/experiences">
-                    <Button variant={activeTab === "experiences" ? "solid" : "ghost"} onClick={()=>setActiveTab("experiences")}><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
+                    <Button isActive={activeTab === "experiences"} onClick={()=>setActiveTab("experiences")}><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
                   </Link>
                   <Link href="/projects">
-                    <Button variant={activeTab === "projects" ? "solid" : "ghost"} onClick={()=>setActiveTab("projects")}><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
+                    <Button isActive={activeTab === "projects"} onClick={()=>setActiveTab("projects")}><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
                   </Link>
                   <Link href="/contact">
-                    <Button variant={activeTab === "contact" ? "solid" : "ghost"} onClick={()=>setActiveTab("contact")}><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
+                    <Button isActive={activeTab === "contact"} onClick={()=>setActiveTab("contact")}><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
                   </Link>
                   
                 </CardBody>
