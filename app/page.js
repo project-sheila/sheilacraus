@@ -1,18 +1,25 @@
 "use client"
 
+import SocialButtons from "@/components/SocialButtons";
 import { education, experiences, skills, techStack } from "@/utils/constants";
 import { getExperiences } from "@/utils/notion";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Card, CardBody, CardHeader, Center, Container, Divider, Flex, Grid, GridItem, HStack, Heading, Image as ChakraImg, Spacer, Stack, Step, StepDescription, StepIcon, StepIndicator, StepStatus, StepTitle, Stepper, Tag, TagLeftIcon, VStack, Wrap, WrapItem, useSteps } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardHeader, Center, Container, Divider, Flex, Grid, GridItem, HStack, Heading, Image as ChakraImg, Spacer, Stack, Step, StepDescription, StepIcon, StepIndicator, StepStatus, StepTitle, Stepper, Tag, TagLeftIcon, VStack, Wrap, WrapItem, useSteps, Input, Textarea } from "@chakra-ui/react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const { activeExp } = useSteps({
     index: 1,
     count: experiences.length,
+  })
+
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    email: "",
+    message: ""
   })
 
   // useEffect(() => {
@@ -91,6 +98,7 @@ export default function Home() {
           </Link>
         </div>
 
+
         <Card className="p-5 my-2 rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
         <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700">sample</p>
         </Card>
@@ -139,11 +147,9 @@ export default function Home() {
       </Card>
 
       <Card className="bg-slate-100 my-5 p-5 shadow-none rounded-xl">
-        <div className="flex justify-between align-middle">
-          <Heading size="sm" className="my-2 mb-5 font-semibold text-gray-500 tracking-widest">
-          • EDUCATION
-          </Heading>
-        </div>
+        <Heading size="sm" className="my-2 mb-5 font-semibold text-gray-500 tracking-widest">
+        • EDUCATION
+        </Heading>
 
         {
           education.map(school => {
@@ -161,14 +167,13 @@ export default function Home() {
 
       </Card>
       
-      <Box className="py-10">
-        <Center>
+      <Center className="py-10">
+        <Stack>
           <Heading className="font-semibold text-slate-700">Let's work together.</Heading>
-        </Center>
-        <Center>
-          <p>Creating intuitive and user-friendly software applications</p>
-        </Center>
-      </Box>
+          <SocialButtons/>
+        </Stack>
+      </Center>
+
 
     </Container>
   ) 
