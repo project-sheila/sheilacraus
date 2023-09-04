@@ -1,10 +1,10 @@
 "use client"
 
 import SocialButtons from "@/components/SocialButtons";
-import { education, experiences, skills, techStack } from "@/utils/constants";
+import { education, experiences, projects, skills, techStack } from "@/utils/constants";
 import { getExperiences } from "@/utils/notion";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Card, CardBody, CardHeader, Center, Container, Divider, Flex, Grid, GridItem, HStack, Heading, Image as ChakraImg, Spacer, Stack, Step, StepDescription, StepIcon, StepIndicator, StepStatus, StepTitle, Stepper, Tag, TagLeftIcon, VStack, Wrap, WrapItem, useSteps, Input, Textarea } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardHeader, Center, Container, Divider, Flex, Grid, GridItem, HStack, Heading, Image as ChakraImg, Spacer, Stack, Step, StepDescription, StepIcon, StepIndicator, StepStatus, StepTitle, Stepper, Tag, TagLeftIcon, VStack, Wrap, WrapItem, useSteps, Input, Textarea, SimpleGrid } from "@chakra-ui/react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -98,14 +98,39 @@ export default function Home() {
             <Button className="bg-white p-3 py-4 shadow-md hover:bg-none" size='xs' rightIcon={<ArrowForwardIcon/>}>View all</Button>
           </Link>
         </div>
+        <SimpleGrid columns={2} spacing={2}>
+        {
+          projects.map(project => {
+            return(
+              <Link key={project.name} href={project.link} target="_blank">
+              <Card className="rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
+                <CardBody className="p-3">
+                  {/* {
+                    project.screenshots.map((photo, index) => {
+                      return(
+                        <Image key={index} src={photo} alt={project.name} />
+                        )
+                      })
+                    } */}
+                  <Image src={project.thumbnail} alt={project.name} />
+                  <Stack mt='2' spacing='3'>
+                    <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700 m-0">{project.name}</p>
+                  </Stack>
+                </CardBody>
+              </Card>
+              </Link>
+              )
+          })
+        }
+        </SimpleGrid>
 
 
-        <Card className="p-5 my-2 rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
+        {/* <Card className="p-5 my-2 rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
         <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700">sample</p>
         </Card>
         <Card className="p-5 my-2 rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
         <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700">sample</p>
-        </Card>
+        </Card> */}
 
       </Card>
 
