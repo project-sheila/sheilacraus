@@ -9,10 +9,6 @@ import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-// export const metadata = {
-//   title: 'Sheila Mae Craus',
-//   description: 'My portfolio website.',
-// }
 
 export default function RootLayout({ children }) {
   const [activeTab, setActiveTab] = useState("home");
