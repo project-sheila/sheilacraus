@@ -1,4 +1,5 @@
 "use client"
+import ExperiencesSection from '@/components/ExperiencesSection';
 import React, { useEffect } from 'react'
 
 export default function Experiences() {
@@ -7,7 +8,7 @@ export default function Experiences() {
   }, []);
   return (
     <main>
-        <h1>Experiences</h1>
+      <ExperiencesSection show_details/>
     </main>
   )
 }
