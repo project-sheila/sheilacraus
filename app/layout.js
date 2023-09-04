@@ -22,22 +22,22 @@ export default function RootLayout({ children }) {
             <nav className='sticky top-0 z-1'>
               <Card className='shadow-lg rounded-lg mt-10'>
                 <CardBody className='p-3'>
-                  <Tooltip label='Home'>
+                  <Tooltip label='Home' className='text-xs rounded-md'>
                   <Link href="/">
                     <Button isActive={activeTab === "home"} onClick={()=>setActiveTab("home")}><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
                   </Link>
                   </Tooltip>
-                  <Tooltip label='Experiences'>
+                  <Tooltip label='Experiences' className='text-xs rounded-md'>
                   <Link href="/experiences">
                     <Button isActive={activeTab === "experiences"} onClick={()=>setActiveTab("experiences")}><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
                   </Link>
                   </Tooltip>
-                  <Tooltip label='Projects'>
+                  <Tooltip label='Projects' className='text-xs rounded-md'>
                   <Link href="/projects">
                     <Button isActive={activeTab === "projects"} onClick={()=>setActiveTab("projects")}><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
                   </Link>
                   </Tooltip>
-                  <Tooltip label='Contact'>
+                  <Tooltip label='Contact' className='text-xs rounded-md'>
                   <Link href="/contact">
                     <Button isActive={activeTab === "contact"} onClick={()=>setActiveTab("contact")}><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
                   </Link>
