@@ -5,18 +5,13 @@ import { Inter } from 'next/font/google'
 import { Button, Card, CardBody, Container, Tooltip } from '@chakra-ui/react';
 import Link from 'next/link';
 import { Providers } from "./providers";
-import { useContext, useState } from 'react';
-import { ActiveTabContext, useActiveTab } from '@/context/ActiveTab';
 import useActiveNavBar from '@/utils/useActiveNavbar';
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 export default function RootLayout({ children }) {
-  // const { activeTab, setActiveTab } = useContext(ActiveTabContext);
   const [activeTab, setActiveNavItem] = useActiveNavBar();
-
-  console.log(activeTab)
 
   return (
     <html lang="en">
