@@ -22,7 +22,7 @@ export default function ExperiencesSection({show_details}) {
         {
           experiences.map(exp => {
             return(
-              <Box className="p-5 my-2 rounded-lg w-full shadow-none bg-white">
+              <Box key={exp.id} className="p-5 my-2 rounded-lg w-full shadow-none bg-white">
                 <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700">{exp.position}</p>
                 <p className="tracking-wide leading-5 mt-2 font-light text-xs text-gray-500">{exp.company}</p>
                 <p className="tracking-wide leading-5 text-xs text-gray-400">{exp.date}</p>

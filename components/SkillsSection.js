@@ -14,10 +14,10 @@ export default function SkillsSection() {
           skills.map(skill => {
             if (skill.main){
               return(
-                <Card className="p-5 my-2 rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
+                <Card key={skill.name} className="p-5 my-2 rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
                 <Flex gap={4}>
                     <Center>
-                      <Image src={skill.icon} width={32} height={32}/>
+                      <Image alt={skill.name} src={skill.icon} width={32} height={32}/>
                     </Center>
                     <Center>
                       <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700">{skill.name}</p>

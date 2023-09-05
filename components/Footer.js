@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Center className="py-10">
         <Stack>
-          <Heading className="font-semibold text-slate-700">Let's work together.</Heading>
+          <Heading className="font-semibold text-slate-700">{`Let's work together.`}</Heading>
           <SocialButtons/>
         </Stack>
     </Center>

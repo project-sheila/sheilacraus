@@ -26,7 +26,7 @@ export default function ProjectsSection({show_details}) {
         {
           projects.map(project => {
             return(
-              <Card className="rounded-lg w-full shadow-none">
+              <Card key={project.name} className="rounded-lg w-full shadow-none">
                 <CardBody className="p-3">
                   {/* {
                     project.screenshots.map((photo, index) => {
