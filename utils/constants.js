@@ -1,11 +1,3 @@
-export const techStack = [
-    "React JS",
-    "React Native",
-    "Javascript",
-    "HTML",
-    "CSS",
-]
-
 export const experiences = [
     {
         id: 1,
@@ -40,9 +32,12 @@ export const projects = [
         short_description: "Face mask usage detector using the YOLOv8 object detection algorithm.",
         long_description: `This system aims to minimize virus transmission by categorizing individuals into three categories: "Uncovered," "Fully Covered," and "Not Covered." Leveraging computer vision and machine learning techniques, this system ensures adherence to face mask guidelines to mitigate the spread of infectious diseases. This innovative technology represents a significant step toward safeguarding public health and promoting safety in our communities.`,
         link: "https://scraus.github.io/special-problem/",
-        tech_stack: ["YOLOv8", "React JS"],
         thumbnail: require("../assets/projects/mask_on/mask_on.png"),
         screenshots: [require("../assets/projects/mask_on/mask_on.png")],
+        tech_stack: [
+            { label: "YOLOv8", file_name: require("../assets/images/yolo.png") },
+            { label: "React JS", file_name: require("../assets/images/react.png") },
+        ],
     },
 ]
 

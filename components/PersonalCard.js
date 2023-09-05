@@ -10,12 +10,12 @@ export default function PersonalCard() {
           <p className="mt-4 leading-relaxed text-sm text-gray-500">Frontend software developer specializing in web and mobile application development.</p>
           <Stack spacing={2} direction={"row"} align={"center"} className="mt-6"> 
           <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=sheilamaecraus7@gmail.com" target='_blank'>
-            <Button className="tracking-wide font-light text-slate-600" size="sm" colorScheme="gray" variant="outline" leftIcon={<i class="fi fi-rr-phone-call"></i>}>
+            <Button className="tracking-wide font-normal text-slate-600" size="sm" colorScheme="gray" variant="outline" leftIcon={<i class="fi fi-rr-phone-call"></i>}>
               Message me
             </Button>
           </Link>
           <Link href="https://www.canva.com/design/DAFoVDqSQkE/GwiBWQExhCuMWDYrQ1h_ew/view?website#4" target="_blank">
-            <Button className="tracking-wide font-light text-slate-600" size="sm" colorScheme="gray" variant="outline" leftIcon={<i class="fi fi-rr-document-signed"></i>}>
+            <Button className="tracking-wide font-normal text-slate-600" size="sm" colorScheme="gray" variant="outline" leftIcon={<i class="fi fi-rr-document-signed"></i>}>
               See resume
             </Button>
           </Link>

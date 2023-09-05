@@ -4,6 +4,7 @@ import { Box, Button, Card, CardBody, Collapse, Divider, Heading, SimpleGrid, St
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import TechStack from './TechStack'
 
 export default function ProjectsSection({show_details}) {
   const { isOpen, onToggle } = useDisclosure();
@@ -43,16 +44,29 @@ export default function ProjectsSection({show_details}) {
 
                   <p className="mt-3 tracking-wide leading-5 font-semibold text-sm text-gray-700 m-0">{project.name}</p>
 
-                  
-                  
+                  {
+                    show_details &&
+                    <Stack gap={1} direction='row' className='mt-2'>
+                      {
+                        project?.tech_stack.map((tech, index) => {
+                          return(
+                            <TechStack key={index} file_name={tech.file_name} label={tech.label} />
+                          )
+                        })
+                      }
+                    </Stack>
+                  }
+
                   {
                     show_details &&
                     <>
                     <Stack gap={2} direction='row' className='mt-4'>
-                      <Button size='sm' onClick={onToggle} className="tracking-wide font-light text-slate-600" colorScheme="gray" variant="outline">
+                      <Link href={project.link}>
+                      <Button size='sm' onClick={onToggle} className="tracking-wide font-normal text-slate-600" colorScheme="gray" variant="outline">
                         Visit
                       </Button>
-                      <Button size='sm' onClick={onToggle} className="tracking-wide font-light text-slate-600" colorScheme="gray" variant="outline">
+                      </Link>
+                      <Button size='sm' onClick={onToggle} className="tracking-wide font-normal text-slate-600" colorScheme="gray" variant="outline">
                         Learn more
                       </Button>
                     </Stack>
