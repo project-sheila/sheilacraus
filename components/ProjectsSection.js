@@ -1,27 +1,31 @@
 import { projects } from '@/utils/constants'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Button, Card, CardBody, Heading, SimpleGrid, Stack } from '@chakra-ui/react'
+import { Box, Button, Card, CardBody, Collapse, Divider, Heading, SimpleGrid, Stack, useDisclosure } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export default function ProjectsSection() {
+export default function ProjectsSection({show_details}) {
+  const { isOpen, onToggle } = useDisclosure();
+
   return (
     <Card className="bg-slate-100 my-5 p-5 shadow-none rounded-xl">
         <div className="flex justify-between align-middle">
           <Heading size="sm" className="my-2 mb-5 font-semibold text-gray-500 tracking-widest">
           • PROJECTS
           </Heading>
-          <Link href="/projects">
-            <Button className="bg-white p-3 py-4 shadow-md hover:bg-none" size='xs' rightIcon={<ArrowForwardIcon/>}>View all</Button>
-          </Link>
+          {
+            !show_details &&
+            <Link href="/projects">
+              <Button className="bg-white p-3 py-4 shadow-md hover:bg-none" size='xs' rightIcon={<ArrowForwardIcon/>}>View all</Button>
+            </Link>
+          }
         </div>
-        <SimpleGrid columns={2} spacing={2}>
+        <SimpleGrid columns={1} spacing={2}>
         {
           projects.map(project => {
             return(
-              <Link key={project.name} href={project.link} target="_blank">
-              <Card className="rounded-lg w-full shadow-none transition-transform duration-300 ease-in-out transform hover:scale-105 hover:cursor-pointer">
+              <Card className="rounded-lg w-full shadow-none">
                 <CardBody className="p-3">
                   {/* {
                     project.screenshots.map((photo, index) => {
@@ -30,13 +34,42 @@ export default function ProjectsSection() {
                         )
                       })
                     } */}
-                  <Image src={project.thumbnail} alt={project.name} />
-                  <Stack mt='2' spacing='3'>
-                    <p className="tracking-wide leading-5 font-semibold text-sm text-gray-700 m-0">{project.name}</p>
-                  </Stack>
+                  {
+                    show_details ?
+                    <Image src={project.thumbnail} alt={project.name} />
+                    :
+                    <Image src={project.thumbnail} alt={project.name} />
+                  }
+
+                  <p className="mt-3 tracking-wide leading-5 font-semibold text-sm text-gray-700 m-0">{project.name}</p>
+
+                  
+                  
+                  {
+                    show_details &&
+                    <>
+                    <Stack gap={2} direction='row' className='mt-4'>
+                      <Button size='sm' onClick={onToggle} className="tracking-wide font-light text-slate-600" colorScheme="gray" variant="outline">
+                        Visit
+                      </Button>
+                      <Button size='sm' onClick={onToggle} className="tracking-wide font-light text-slate-600" colorScheme="gray" variant="outline">
+                        Learn more
+                      </Button>
+                    </Stack>
+
+                    <Collapse in={isOpen} animateOpacity>
+                      <Box mt='2'>
+                        <Divider className='mt-4 mb-2'/>
+                        <p className="py-1 tracking-wide leading-5 text-xs text-gray-500">
+                          {project.long_description}
+                        </p>
+                      </Box>
+                    </Collapse>
+                    </>
+                  }
+
                 </CardBody>
               </Card>
-              </Link>
               )
           })
         }
