@@ -5,13 +5,18 @@ import { Inter } from 'next/font/google'
 import { Button, Card, CardBody, Container, Tooltip } from '@chakra-ui/react';
 import Link from 'next/link';
 import { Providers } from "./providers";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ActiveTabContext, useActiveTab } from '@/context/ActiveTab';
+import useActiveNavBar from '@/utils/useActiveNavbar';
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 export default function RootLayout({ children }) {
-  const [activeTab, setActiveTab] = useState("home");
+  // const { activeTab, setActiveTab } = useContext(ActiveTabContext);
+  const [activeTab, setActiveNavItem] = useActiveNavBar();
+
+  console.log(activeTab)
 
   return (
     <html lang="en">
@@ -24,22 +29,22 @@ export default function RootLayout({ children }) {
                 <CardBody className='p-3'>
                   <Tooltip label='Home' className='text-xs rounded-md'>
                   <Link href="/">
-                    <Button isActive={activeTab === "home"} onClick={()=>setActiveTab("home")}><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
+                    <Button isActive={activeTab === "home"} onClick={()=>setActiveNavItem("home")}><i class="text-xl text-gray-500 fi fi-rr-home"></i></Button>
                   </Link>
                   </Tooltip>
                   <Tooltip label='Experiences' className='text-xs rounded-md'>
                   <Link href="/experiences">
-                    <Button isActive={activeTab === "experiences"} onClick={()=>setActiveTab("experiences")}><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
+                    <Button isActive={activeTab === "experiences"} onClick={()=>setActiveNavItem("experiences")}><i class="text-xl text-gray-500 fi fi-rr-briefcase"></i></Button>
                   </Link>
                   </Tooltip>
                   <Tooltip label='Projects' className='text-xs rounded-md'>
                   <Link href="/projects">
-                    <Button isActive={activeTab === "projects"} onClick={()=>setActiveTab("projects")}><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
+                    <Button isActive={activeTab === "projects"} onClick={()=>setActiveNavItem("projects")}><i class="text-xl text-gray-500 fi fi-rr-folder-open"></i></Button>
                   </Link>
                   </Tooltip>
                   <Tooltip label='Contact' className='text-xs rounded-md'>
                   <Link href="/contact">
-                    <Button isActive={activeTab === "contact"} onClick={()=>setActiveTab("contact")}><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
+                    <Button isActive={activeTab === "contact"} onClick={()=>setActiveNavItem("contact")}><i class="text-xl text-gray-500 fi fi-rr-comment-alt-dots"></i></Button>
                   </Link>
                   </Tooltip>
                   
