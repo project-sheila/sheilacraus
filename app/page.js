@@ -23,7 +23,6 @@ export default function Home() {
       <ProjectsSection/>
       <SkillsSection/>
       <EducationSection/>      
-      <Footer/>
     </Container>
   ) 
 }

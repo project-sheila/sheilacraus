@@ -6,6 +6,7 @@ import { Button, Card, CardBody, Container, Tooltip } from '@chakra-ui/react';
 import Link from 'next/link';
 import { Providers } from "./providers";
 import useActiveNavBar from '@/utils/useActiveNavbar';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -49,7 +50,9 @@ export default function RootLayout({ children }) {
 
             <Card className='shadow-lg rounded-lg mt-5 mb-10 p-5'>
               {children}
+              <Footer/> 
             </Card>
+
             
           </Container>
         </Providers>
