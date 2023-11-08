@@ -3,32 +3,32 @@ export const experiences = [
         id: 1,
         position: "Junior Software Developer",
         company: "MYT SoftDev Solutions, Inc.",
-        date: "April 2022 - Present",
+        date: "November 2021 - Present",
         description: [
-            "Developed and implemented robust ERP systems to streamline operations of around 75 local branches, enabling effective tracking and management of key business processes.",
-            "Created hybrid mobile apps using React Native that enhanced employee productivity by enabling attendance tracking, order recording, stock requests, receiving transfers, and generating reports, both online and offline.",
-            "Built responsive, visually appealing, and user-friendly eCommerce website with a content management system (CMS), empowering seamless product listing maintenance by business owners.",
-            "Collaborated closely with backend developers, project managers, and QA specialists to ensure smooth integration and delivery of high-quality solutions.",
-            "Provided supervision to interns, contributed to the establishment of company-wide frontend development guidelines, and conducted thorough code reviews to ensure adherence to coding standards and best practices.",
-            "Designed effective and easy-to-navigate user interfaces using Figma."
-        ],
-    },
-    {
-        id: 2,
-        position: "Software Developer Intern",
-        company: "MYT SoftDev Solutions, Inc.",
-        date: "November 2021 - April 2022",
-        description: [
-            "Collaborated with the development team to integrate new features and assisted to debug and enhance existing projects.",
-            "Utilized Figma to design and prototype an eCommerce website, ensuring a visually appealing and user-friendly interface and implemented it on Shopify.",
-            "Created Entity Relationship Diagrams (ERDs) to visualize data relationships, ensuring efficient data management and system performance."
+           "Developed hybrid mobile applications using React Native to streamline attendance logging, order management, stock requests, transfer handling, expense and wastage recording, and daily sales report submissions, leading to improved food franchising business operation.",
+           "Contributed to the development of diverse web application projects using React JS, including robust Enterprise Resource Planning (ERP) systems, Warehouse Management Systems (WMS), diagnostic systems, and e-commerce systems, significantly benefiting multiple businesses with improved operations and efficiency.",
+           "Designed user-friendly UI interfaces using Figma, provided mentorship to company interns, conducted thorough code reviews, performed research and development to emerging technologies and best practices, and established frontend development guidelines for the company.",
+           "Facilitated client interactions, addressing concerns, and conducting project demonstrations to ensure client satisfaction and successful product implementation."
         ],
     },
 ]
 
 export const projects = [
     {
-        name: "Mask ON: Real-time mask detector",
+        name: "Repo: Collaborative Checklist Web App",
+        short_description: "Mobile-responsive, full-stack, real-time, and collaborative checklist web app",
+        long_description: `Repo is more than just a checklist; it's a collaborative workspace for you and your team, family, roomies, or friends. With real-time updates, multiple users can simultaneously edit and check off tasks, ensuring everyone stays on the same page and gets things done faster. Whether you're planning a family vacation, organizing a team project, or just sharing a grocery list, it's never been easier.`,
+        link: "https://repo-collab.vercel.app/",
+        thumbnail: require("../assets/projects/repo/repo.png"),
+        screenshots: [],
+        tech_stack: [
+            { label: "Next JS", file_name: require("../assets/images/nextjs.png") },
+            { label: "Supabase", file_name: require("../assets/images/supabase.png") },
+            { label: "Vercel", file_name: require("../assets/images/vercel.png") },
+        ],
+    },
+    {
+        name: "Mask ON: Real-time mask usage detector",
         short_description: "Face mask usage detector using the YOLOv8 object detection algorithm.",
         long_description: `This system aims to minimize virus transmission by categorizing individuals into three categories: "Uncovered," "Fully Covered," and "Not Covered." Leveraging computer vision and machine learning techniques, this system ensures adherence to face mask guidelines to mitigate the spread of infectious diseases. This innovative technology represents a significant step toward safeguarding public health and promoting safety in our communities.`,
         link: "https://scraus.github.io/special-problem/",
@@ -39,6 +39,18 @@ export const projects = [
             { label: "React JS", file_name: require("../assets/images/react.png") },
         ],
     },
+    // {
+    //     name: "Raketship: Job Search Mobile App",
+    //     short_description: "Job Search Mobile App Powered by JSearch Rapid API Using React Native and Expo",
+    //     long_description: "A simple job finder mobile application, fetched from JSearch Rapid API, using React Native and Expo.",
+    //     link: "https://scraus.github.io/special-problem/",
+    //     thumbnail: require("../assets/projects/raketship/raketship.png"),
+    //     screenshots: [],
+    //     tech_stack: [
+    //         { label: "YOLOv8", file_name: require("../assets/images/yolo.png") },
+    //         { label: "React JS", file_name: require("../assets/images/react.png") },
+    //     ],
+    // },
 ]
 
 export const skills = [
@@ -104,7 +116,7 @@ export const education = [
     {
         id: 1,
         title: "University of the Philippines Cebu",
-        place: "",
+        place: "BS Computer Science, Magna Cum Laude, GWA: 1.32",
         date: "July 2023",
         description: [
             "Bachelor of Science in Computer Science, Magna Cum Laude, GWA: 1.32",

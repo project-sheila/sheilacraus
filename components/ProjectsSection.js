@@ -3,11 +3,17 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import { Box, Button, Card, CardBody, Collapse, Divider, Heading, SimpleGrid, Stack, useDisclosure } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import TechStack from './TechStack'
 
 export default function ProjectsSection({show_details}) {
   const { isOpen, onToggle } = useDisclosure();
+  const [activeProject, setActiveProject] = useState(0);
+
+  const handleLearnMore = (index) => {
+    onToggle();
+    setActiveProject(()=>index)
+  }
 
   return (
     <Card className="bg-slate-100 my-5 p-5 shadow-none rounded-xl">
@@ -24,7 +30,7 @@ export default function ProjectsSection({show_details}) {
         </div>
         <SimpleGrid columns={1} spacing={2}>
         {
-          projects.map(project => {
+          projects.map((project, index) => {
             return(
               <Card key={project.name} className="rounded-lg w-full shadow-none">
                 <CardBody className="p-3">
@@ -62,16 +68,17 @@ export default function ProjectsSection({show_details}) {
                     <>
                     <Stack gap={2} direction='row' className='mt-4'>
                       <Link href={project.link}>
-                      <Button size='sm' onClick={onToggle} className="tracking-wide font-normal text-slate-600" colorScheme="gray" variant="outline">
-                        Visit
-                      </Button>
+                        <Button size='sm' className="tracking-wide font-normal text-slate-600" colorScheme="gray" variant="outline">
+                          Visit
+                        </Button>
                       </Link>
-                      <Button size='sm' onClick={onToggle} className="tracking-wide font-normal text-slate-600" colorScheme="gray" variant="outline">
+                      <Button size='sm' onClick={()=>handleLearnMore(index)} className="tracking-wide font-normal text-slate-600" colorScheme="gray" variant="outline">
                         Learn more
                       </Button>
                     </Stack>
 
-                    <Collapse in={isOpen} animateOpacity>
+                    
+                    <Collapse in={isOpen && index === activeProject} animateOpacity>
                       <Box mt='2'>
                         <Divider className='mt-4 mb-2'/>
                         <p className="py-1 tracking-wide leading-5 text-xs text-gray-500">
@@ -79,6 +86,7 @@ export default function ProjectsSection({show_details}) {
                         </p>
                       </Box>
                     </Collapse>
+                    
                     </>
                   }
 
