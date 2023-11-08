@@ -14,7 +14,7 @@ export default function PersonalCard() {
               Message me
             </Button>
           </Link>
-          <Link href="https://www.canva.com/design/DAFoVDqSQkE/GwiBWQExhCuMWDYrQ1h_ew/view?website#4" target="_blank">
+          <Link href="https://sheilacraus.my.canva.site/" target="_blank">
             <Button className="tracking-wide font-normal text-slate-600" size="sm" colorScheme="gray" variant="outline" leftIcon={<i class="fi fi-rr-document-signed"></i>}>
               See resume
             </Button>
